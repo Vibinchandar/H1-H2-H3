@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color & Height</title>
+</head>
+<body>
+  <div class="container">
+    <div class="contentbox">
+      <input class="text" id="text" placeholder="Type something"/>
+      <div id="display-text"></div>
+      <button id="show">output</button>
+      <button class="h1" id="h1">h1</button>
+      <button class="h2" id="h2">h2</button>
+      <button class="h3" id="h3">h3</button>
+      <button id="red">red</button>
+      <button id="blue">blue</button>
+      <button id="green">green</button>            
+    </div>
+  </div>
+  <style>
+    body{
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        background-color: beige;        
+    }
+    .contentbox{
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      justify-items: center;
+      gap: 1rem;
+    }    
+    </style>
+
+  <script>
+
+    let word = document.getElementById("text");
+    let small = document.getElementById("h1");
+    let larger = document.getElementById("h2");
+    let exlarge = document.getElementById("h3");
+    let colorred = document.getElementById("red");
+    let colorblue = document.getElementById("blue");
+    let colorgreen = document.getElementById("green");
+    let output = document.getElementById("show");
+    let display = document.getElementById("display-text");
+
+    //ouput
+    output.addEventListener('click', showOutput)
+    function showOutput(){    
+    display.innerText = word.value
+    }
+
+    //sizeh1
+    small.addEventListener("click", sizeh1);
+    function sizeh1() {
+      display.style.fontSize = "60px";      
+    }
+    
+    //sizeh2
+    larger.addEventListener("click", sizeh2);
+    function sizeh2() {
+      display.style.fontSize = "40px";
+    }
+    //sizeh3
+    exlarge.addEventListener("click", sizeh3);
+    function sizeh3() {
+      display.style.fontSize = "20px";
+    }
+    
+    //Red color
+    colorred.addEventListener("click", red);
+    function red() {
+      display.style.color = "red";
+    }
+
+    //Blue color
+    colorblue.addEventListener("click", blue);
+    function blue() {
+      display.style.color = "blue";
+    }
+
+    //Green color
+    colorgreen.addEventListener("click", green);
+    function green() {
+      display.style.color = "green";
+    }   
+
+  </script>
+
+</body>
+</html>
